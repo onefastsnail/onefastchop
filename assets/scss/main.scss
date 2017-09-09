@@ -23,6 +23,7 @@
  * include the base helpers, typography etc
  */
 @import "base/base";
+@import "base/helpers";
 
 /**
  * Layouts
@@ -30,12 +31,14 @@
  */
 @import "layouts/l-cards";
 @import "layouts/l-promos";
+@import "layouts/l-columns";
 
 /**
  * Sections
  * Block contain of layouts and components, and those should styled individually with modifiers
  */
 @import "sections/s-example";
+@import "sections/s-biggie";
 
 /**
  * Components

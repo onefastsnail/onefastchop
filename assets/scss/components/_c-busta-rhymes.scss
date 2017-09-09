@@ -1,21 +1,21 @@
 .c-busta-rhymes {
     padding: 3em 0;
     width: 100%;
-    max-width: 1200px;
     color: #fff;
     text-align: center;
 
     &__quote {
         border: 0;
-        font-family: "Impact", Arial, serif;
         font-size: 2em;
+        line-height: 1.1;
+        font-weight: 600;
         width: 86%;
         position: relative;
         margin: auto;
 
         &:before, &:after {
             font-family: Arial;
-            font-size: 2em;
+            font-size: 1em;
             position: absolute;
             line-height: 1;
         }

@@ -5,12 +5,11 @@
     }
 
     &:not(:last-child) {
-        margin: 3em auto;
+        margin-top: 3em;
     }
 
     // only for demo purposes :P
     &--busta-rhymes {
-        padding: 2em 4em;
         background: $brand-color;
     }
 }
