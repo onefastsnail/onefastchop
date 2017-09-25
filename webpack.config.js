@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const BUILD_DIR = path.resolve(__dirname, 'assets/dist/');
+const BUILD_DIR = path.resolve(__dirname, 'assets/dist/js');
 const APP_DIR = path.resolve(__dirname, 'assets/js');
 
 const config = {
@@ -11,10 +11,10 @@ const config = {
         filename: 'bundle.js'
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            mangle: false
-        })
+        // new webpack.optimize.UglifyJsPlugin({
+        //     sourceMap: false,
+        //     mangle: false
+        // })
     ],
     module: {
         loaders: [

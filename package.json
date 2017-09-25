@@ -1,33 +1,54 @@
 {
-  "name": "onefastchop",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "npm-run-all --parallel server dev",
-    "server": "http-server",
-    "dev": "webpack -d --watch",
-    "build": "webpack -p"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "babel-core": "6.8.0",
-    "babel-loader": "6.2.4",
-    "babel-preset-es2015": "6.6.0",
-    "babel-register": "6.8.0",
-    "http-server": "^0.9.0",
-    "npm-run-all": "1.8.0"
-  },
-  "devDependencies": {
-    "axios": "^0.16.2",
-    "css-loader": "^0.28.4",
-    "eslint": "^4.4.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.7.0",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.5.4"
+    "name": "onefastchop",
+    "version": "1.0.1",
+    "description": "onefastchop",
+    "main": "gulpfile.js",
+    "babel": {
+      "presets": ["es2015"]
+    },
+    "scripts": {
+      "setup": "npm install",
+      "start": "dev",
+      "server": "http-server",
+      "dev": "npm-run-all --parallel server gulpDev webpackDev",
+      "build": "npm-run-all --parallel gulpProd webpackProd",
+      "gulpDev": "gulp",
+      "gulpProd": "gulp build",
+      "webpackDev": "webpack -d --watch",
+      "webpackProd": "webpack -p"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/username/repository.git"
+    },
+    "author": "onefastchop",
+    "license": "ISC",
+    "dependencies": {
+      "babel-loader": "^7.1.2",
+      "dotenv": "^4.0.0",
+      "npm-run-all": "^4.1.1",
+      "webpack": "^3.6.0"
+    },
+    "devDependencies": {
+      "gulp": "^3.9.0",
+      "gulp-autoprefixer": "^4.0.0",
+      "gulp-cached": "^1.1.0",
+      "gulp-changed": "^3.1.0",
+      "gulp-clean-css": "^3.6.0",
+      "gulp-debug": "^3.1.0",
+      "gulp-sass": "^3.1.0",
+      "gulp-sourcemaps": "^2.6.0",
+      "gulp-wait": "^0.0.2",
+      "gulp-watch": "^4.3.0",
+      "gulp-stylelint": "^4.0.0",
+      "stylelint-config-recommended": "^1.0.0",
+      "stylelint-scss": "^1.5.2",
+      "babel-core": "6.8.0",
+      "babel-preset-es2015": "6.6.0",
+      "babel-register": "6.8.0",
+      "eslint": "^4.4.1",
+      "eslint-loader": "^1.9.0",
+      "eslint-plugin-import": "^2.7.0",
+      "http-server": "^0.9.0"
+    }
   }
-}
