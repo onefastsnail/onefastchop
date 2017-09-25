@@ -8,7 +8,7 @@ var watch = require('gulp-watch');
 var cache = require('gulp-cached');
 var wait = require('gulp-wait');
 
-var scssPath = 'assets/scss/main.scss';
+var scssPath = 'assets/scss/**/*.scss';
 var gulpTaskTimeout = 10;
 
 gulp.task('scss-lint', function lintCssTask() {

@@ -9,7 +9,7 @@
     "scripts": {
       "setup": "npm install",
       "start": "dev",
-      "server": "http-server",
+      "server": "http-server -s",
       "dev": "npm-run-all --parallel server gulpDev webpackDev",
       "build": "npm-run-all --parallel gulpProd webpackProd",
       "gulpDev": "gulp",
