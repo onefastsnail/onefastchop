@@ -4,5 +4,5 @@ A little frontend boilerplate with some examples.
 
 ## Usage
 
-1. `npm install`
-2. `npm run dev` which runs a server, Webpack and Gulp
+1. `yarn install`
+2. `yarn start`
