@@ -11,7 +11,8 @@
     },
     "scripts": {
         "start": "webpack-dev-server",
-        "build": "webpack -p"
+        "build": "webpack -p",
+        "test": "mocha test/e2e/bootstrap.js --timeout 15000 --recursive test"
     },
     "repository": {
         "type": "git",
@@ -33,12 +34,16 @@
         "extract-text-webpack-plugin": "^3.0.2",
         "html-webpack-plugin": "^2.30.1",
         "node-sass": "^4.7.2",
-        "npm-run-all": "^4.1.1",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "sass-loader": "^6.0.6",
         "style-loader": "^0.20.1",
-        "webpack": "^3.6.0",
+        "webpack": "^3.6.0"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "mocha": "^5.0.0",
+        "puppeteer": "^1.0.0",
         "webpack-dev-server": "^2.11.1"
     }
 }
