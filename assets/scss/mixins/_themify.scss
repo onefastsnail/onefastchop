@@ -1,5 +1,5 @@
 // feed properties such as color, background, border
-@mixin themeThis($property, $themes: $themes) {
+@mixin themify($property, $themes: $themes) {
 
     // then loop the themes and create the theme parent reference selector
     @each $theme, $color in $themes {

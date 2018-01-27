@@ -8,5 +8,5 @@
     text-align: center;
     justify-content: center;
 
-    @include themeThis(background);
+    @include themify(background);
 }
