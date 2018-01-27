@@ -1,39 +1,59 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'assets/dist/js');
-const APP_DIR = path.resolve(__dirname, 'assets/js');
+const distDir = path.resolve(__dirname, 'assets/dist/');
+const srcDir = path.resolve(__dirname, 'assets/js');
 
-const config = {
-    entry: APP_DIR + '/index.js',
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: './index.html',
+  filename: 'index.html',
+  inject: 'body'
+});
+
+module.exports = {
+    entry: `${srcDir}/index.js`,
     output: {
-        path: BUILD_DIR,
-        filename: 'bundle.js'
+        path: distDir,
+        filename: 'js/bundle.js'
     },
     plugins: [
-        // new webpack.optimize.UglifyJsPlugin({
-        //     sourceMap: false,
-        //     mangle: false
-        // })
+        new ExtractTextPlugin({ filename: 'css/bundle.css' }),
+        HtmlWebpackPluginConfig
     ],
     module: {
         loaders: [
             {
-                test: /\.js?/,
-                include: APP_DIR,
+                test: /\.(js|jsx)$/,
+                include: srcDir,
                 loader: 'babel-loader'
             },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader'
             },
             {
                 test: /\.scss$/,
-                loader: 'style-loader!css-loader!sass-loader'
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        }
+                    ],
+                })
             }
         ]
     }
 };
-
-module.exports = config
